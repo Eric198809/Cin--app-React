@@ -34,20 +34,25 @@
       0 16px 1px rgba(255, 255, 255, 0.05);
   }
   h2 {
+    font-size: 1.5rem;
     margin: 24px 0 0px;
     letter-spacing: 1px;
     line-height: 20px;
+    padding: 10px 0px 10px 0px;
   }
   h5 {
     color: $color-3;
     letter-spacing: 1px;
     font-size: 1.2rem;
     font-weight: 300;
+    font-size: 0.9rem;
   }
   h4 {
     letter-spacing: 1px;
     font-size: 1.2rem;
     margin-top: -4px;
+    font-size: 0.9rem;
+    padding: 10px 0px 10px 0px;
 
     span {
       font-size: 0.7rem;
@@ -61,9 +66,9 @@
   li {
     background: #212040;
     border-radius: 18px;
-    padding: 0px 7px;
+    padding: 6px 7px;
     margin: 0 4px 4px 0;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
 
     &:first-child {
       margin-left: -4px;
@@ -73,6 +78,8 @@
     letter-spacing: 1px;
     font-size: 1.4rem;
     margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 0px 10px 0px;
   }
   p {
     color: $color-3;
@@ -80,6 +87,7 @@
     line-height: 20px;
     height: 160px;
     overflow-y: scroll;
+    font-size: 0.8rem;
 
     &::-webkit-scrollbar {
       display: none;
