@@ -33,14 +33,14 @@ const Form = () => {
               id="search-input"
               onChange={searchMovie}
             />
-            <input type="submit" value="Rechercher" />
+            <input type="submit" value="Annuler la recherche" onClick={()=> setSearch("retour vers le")} />
           </form>
           <div className="btn-sort-container">
             <div className="btn-sort" id="goodToBad" onClick={()=> setSortGoodBad("goodToBad")}>
               Top <span> - </span>
             </div>
             <div className="btn-sort" id="badToGood" onClick={()=> setSortGoodBad("badToGood")}>
-              Flop <span> - </span>
+              Flop <span> </span>
             </div>
           </div>
         </div>
