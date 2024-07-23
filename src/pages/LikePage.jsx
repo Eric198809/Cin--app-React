@@ -10,7 +10,7 @@ const LikePage = () => {
     let moviesId = localStorage.movies
       ? localStorage.getItem("movies").split(",")
       : [];
-    
+
     for (let i = 0; i < moviesId.length; i++) {
       axios
         .get(
@@ -22,15 +22,12 @@ const LikePage = () => {
   }, []);
   return (
     <div className="user-list-page">
-      <h1>Mes coup de coeur</h1>
       <div className="result">
-        {listData.length>0 
-        ? 
-        listData.map((movie)=>(
-          <Card movie={movie} key={movie.id}/>
-        ))
-        : <h2>Aucun coup de coeur </h2>
-        }
+        {listData.length > 0 ? (
+          listData.map((movie) => <Card movie={movie} key={movie.id} />)
+        ) : (
+          <h2 style={{ marginTop: "100px" }}>Aucun coup de coeur </h2>
+        )}
       </div>
     </div>
   );

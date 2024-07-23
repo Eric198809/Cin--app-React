@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import LikePage from "./pages/LikePage.jsx";
 import "./styles/index.scss";
+import Movie from "./pages/Movie.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/coups-de-coeur",
         element: <LikePage />,
+      },
+      {
+        path: "/movie/:id",
+        element: <Movie />,
       },
     ],
   },
