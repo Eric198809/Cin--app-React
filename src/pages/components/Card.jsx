@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ movie }) => {
   const dateFormater = (date) => {
     let [yy, mm, dd] = date.split("-");
@@ -72,17 +74,6 @@ const Card = ({ movie }) => {
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
-  const addStorage = () => {
-    let storedData = window.localStorage.movies
-      ? window.localStorage.movies.split(",")
-      : [];
-
-    if (!storedData.includes(movie.id.toString())) {
-      storedData.push(movie.id);
-      window.localStorage.movies = storedData;
-    }
-  };
-
   const deleteStorage = () => {
     let storedData = window.localStorage.movies.split(",");
     let newData = storedData.filter((id) => id != movie.id);
@@ -99,22 +90,23 @@ const Card = ({ movie }) => {
         }
         alt={movie.title}
       />
+
       <h2>{movie.title}</h2>
       {movie.release_date ? (
         <h5> Sortie le {dateFormater(movie.release_date)} </h5>
       ) : null}
-      <h4>{movie.vote_average.toFixed(1)} /10</h4>
+      <h4>
+        {movie.vote_average.toFixed(1)} /10 <span>⭐</span>
+      </h4>
       <ul>
         {movie.genre_ids
           ? genreFinder()
           : movie.genres.map((genre) => <li key={genre}>{genre.name}</li>)}
       </ul>
-      {movie.overview ? <h3>Descriptif</h3> : ""}
-      <p>{movie.overview}</p>
       {movie.genre_ids ? (
-        <div className="btn" onClick={() => addStorage()}>
-          Ajouter au coup de coeur
-        </div>
+        <Link to={`/movie/${movie.id}`}>
+          <div className="btn">Plus de détails</div>
+        </Link>
       ) : (
         <div className="btn" onClick={() => deleteStorage()}>
           Supprimer de la list

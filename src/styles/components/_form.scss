@@ -4,6 +4,7 @@
     flex-direction: column;
     place-items: center;
     text-align: center;
+  
   }
   form {
   
@@ -39,6 +40,7 @@
   }
   .btn-sort-container {
     margin: 8px auto;
+   
     width: 220px;
     display: flex;
     justify-content: space-around;
@@ -56,6 +58,8 @@
       width: 110px;
       transition: 0.3s;
       position: relative;
+      padding-top: 5px;
+      padding-bottom: 5px;
 
       &:hover {
         background: $black;
