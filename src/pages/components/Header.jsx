@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [favNumber, setFavNumber] = useState();
+  const [favNumber, setFavNumber] = useState(0);
+
   const fav = () => {
-    let moviesId = localStorage.movies
+    let moviesId = localStorage.getItem("movies")
       ? localStorage.getItem("movies").split(",")
       : [];
-
+  
     setFavNumber(moviesId.length);
   };
-
+  
   useEffect(() => {
     fav();
-  }, [favNumber]);
+  }, []);
+  
 
   return (
     <div className="header">

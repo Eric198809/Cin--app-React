@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import CardMovieDetail from "./components/CardMovieDetail";
 
+
 const Movie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState([]);
