@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { useFavContext } from "../../Context/fav";
 
-const Card = ({ movie }) => {
+const FavCard = ({ movie }) => {
+
+  const {deleteStorage} = useFavContext();
+
   const dateFormater = (date) => {
     let [yy, mm, dd] = date.split("-");
     return [dd, mm, yy].join("/");
@@ -73,10 +76,9 @@ const Card = ({ movie }) => {
 
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
-
-
   return (
-    <div className="card">
+    <div>
+       <div className="card">
       <img
         src={
           movie.poster_path
@@ -99,12 +101,13 @@ const Card = ({ movie }) => {
           : movie.genres.map((genre) => <li key={genre}>{genre.name}</li>)}
       </ul>
       
-        <Link to={`/movie/${movie.id}`}>
-          <div className="btn">Plus de détails</div>
-        </Link>
+        
+          <div className="btn" onClick={()=>deleteStorage(movie.id)}>Retier de la liste</div>
+     
     
+    </div>
     </div>
   );
 };
 
-export default Card;
+export default FavCard;

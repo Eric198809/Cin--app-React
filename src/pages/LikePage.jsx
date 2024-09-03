@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Card from "./components/Card";
+import FavCard from "./components/FavCard";
 
 const LikePage = () => {
   const [listData, setListData] = useState([]);
@@ -35,7 +35,7 @@ const LikePage = () => {
     <div className="user-list-page">
       <div className="result">
         {listData.length > 0 ? (
-          listData.map((movie) => <Card movie={movie} key={movie.id} />)
+          listData.map((movie) => <FavCard movie={movie} key={movie.id} />)
         ) : (
           <h2 style={{ marginTop: "100px" }}>Aucun coup de coeur</h2>
         )}

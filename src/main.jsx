@@ -3,12 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import LikePage from "./pages/LikePage.jsx";
-import "./styles/index.scss";
 import Movie from "./pages/Movie.jsx";
+import { FavProvider } from "./Context/fav.jsx";
+import "./styles/index.scss";
 
 const router = createBrowserRouter([
   {
-    element: <App />,
+    element: <FavProvider><App /></FavProvider>,
     children: [
       {
         path: "/",
